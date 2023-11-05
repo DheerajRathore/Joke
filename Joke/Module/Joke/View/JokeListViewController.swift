@@ -45,7 +45,7 @@ class JokeListViewController: UIViewController {
         // call presenter viewDidLoad for initial setup.
         presenter.viewDidLoad()
         // adding timer to call method in every 60 seconds
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(getJokes), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(getJokes), userInfo: nil, repeats: true)
     }
     
     
@@ -60,7 +60,6 @@ class JokeListViewController: UIViewController {
         self.view.addSubview(pageTitle)
         self.view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            
             pageTitle.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             pageTitle.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             pageTitle.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),

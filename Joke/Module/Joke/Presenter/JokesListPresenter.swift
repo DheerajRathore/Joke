@@ -44,7 +44,7 @@ extension JokesListPresenter{
         if Reachability().isNetworkAvailable() == false {
             self.view?.showError(withErrorMessage: StringConstant.internetNotFound)
         }
-        JokeListService().getJokesFromServer { [weak self] jokeObj, httpResponse, apiError in
+        JokeListService().getJokesFromServer { [weak self] joke, httpResponse, apiError in
             //check for error.
             if  apiError != nil  {
                 self?.view?.showError(withErrorMessage: apiError?.customDescription ?? StringConstant.someThingWentWrong)
@@ -55,12 +55,12 @@ extension JokesListPresenter{
                 return
             }
             
-            guard let obj = jokeObj else {
+            guard let meesage = joke else {
                 return
             }
             
             // create instance from data
-            let message = String(decoding: obj, as: UTF8.self)
+            let message = String(decoding: meesage, as: UTF8.self)
             
             // save current fetch joke to Core data.
             self.saveJoke(message: message)
@@ -83,7 +83,7 @@ extension JokesListPresenter{
 
 extension JokesListPresenter: JokesListPresenterInputProtocol {
     func viewDidLoad() {
-        // fetch previously save jokes from core data.
+        // fetch previously save jokes from core data, when view is loading.
         model.fetchAllJokes { [weak self] list in
             guard let self =  self else {
                 return

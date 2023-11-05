@@ -9,7 +9,7 @@ import UIKit
 
 class JokeTableViewCell: UITableViewCell {
 
-    // MARK: UI PROPERTIES.
+    // MARK: UI COMPONENT.
     private var dataView: UIView  = {
         let dataView = UIView()
         dataView.backgroundColor = UIColor(red: 191/255, green: 298/255, blue: 49/255, alpha: 1)
