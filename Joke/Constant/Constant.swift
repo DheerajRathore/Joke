@@ -12,4 +12,5 @@ enum StringConstant {
     static let someThingWentWrong = "Something went wrong."
     static let errorAlertTitle = "API Failure"
     static let okButtonTitle = "OK"
+    static let internetNotFound = "Check for internet connection"
 }

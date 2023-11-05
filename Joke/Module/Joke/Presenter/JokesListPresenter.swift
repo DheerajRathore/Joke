@@ -10,7 +10,7 @@ import Foundation
 
 protocol JokesListPresenterProtocol: AnyObject {
     func refreshList()
-    func showAPIError(withErrorMessage: String)
+    func showError(withErrorMessage: String)
 }
 
 
@@ -19,11 +19,12 @@ protocol JokesListPresenterInputProtocol: AnyObject {
 }
 
 final class JokesListPresenter {
-    
+    // MARK: PROPERTIES.
     private weak var view: JokesListPresenterProtocol?
     private(set) var model: JokeListModel
     var jokeList: [Joke] = []
     
+    // MARK: METHODS.
     init(view: JokesListPresenterProtocol, model: JokeListModel){
         self.view = view
         self.model = model
@@ -39,10 +40,14 @@ final class JokesListPresenter {
 
 extension JokesListPresenter{
     func fetchJoke() {
+        // check for internet connection.
+        if Reachability().isNetworkAvailable() == false {
+            self.view?.showError(withErrorMessage: StringConstant.internetNotFound)
+        }
         JokeListService().getJokesFromServer { [weak self] jokeObj, httpResponse, apiError in
-            //check for api error.
+            //check for error.
             if  apiError != nil  {
-                self?.view?.showAPIError(withErrorMessage: apiError?.customDescription ?? StringConstant.someThingWentWrong)
+                self?.view?.showError(withErrorMessage: apiError?.customDescription ?? StringConstant.someThingWentWrong)
                 return
             }
             
@@ -70,7 +75,7 @@ extension JokesListPresenter{
             if self.jokeList.count > 10 {
                 self.jokeList.removeLast()
             }
-
+            
             self.view?.refreshList()
         }
     }

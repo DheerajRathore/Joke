@@ -86,7 +86,10 @@ extension JokeListViewController:  JokesListPresenterProtocol {
     
     /// showAPIError method is used for displaying error gots from network call
     /// - Parameter withErrorMessage: string parameter for displaying the error.
-    func showAPIError(withErrorMessage: String) {
+    func showError(withErrorMessage: String) {
+        // invalidate the timer, as getting error from API no need to call further api.
+        timer?.invalidate()
+        
         // display alert.
         let alert = UIAlertController(title: StringConstant.errorAlertTitle, message: withErrorMessage, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: StringConstant.okButtonTitle, style: .cancel, handler: { (_) in

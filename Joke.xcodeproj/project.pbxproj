@@ -18,6 +18,7 @@
 		4734F7E02AF48F860003413D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4734F7DF2AF48F860003413D /* Constant.swift */; };
 		4734F7E32AF49DF50003413D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4734F7E22AF49DF50003413D /* CoreDataStack.swift */; };
 		475F76AF2AF33EF80093B3EE /* JokeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F76AE2AF33EF80093B3EE /* JokeTableViewCell.swift */; };
+		47B85AD02AF7FF6C00347521 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B85ACF2AF7FF6C00347521 /* Reachability.swift */; };
 		47DCDC712AF769B0003D3917 /* Joke+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DCDC6F2AF769B0003D3917 /* Joke+CoreDataClass.swift */; };
 		47E838E22AF0D63C00673F59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E838E12AF0D63C00673F59 /* AppDelegate.swift */; };
 		47E838E62AF0D63C00673F59 /* JokeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E838E52AF0D63C00673F59 /* JokeListViewController.swift */; };
@@ -36,6 +37,7 @@
 		4734F7DF2AF48F860003413D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		4734F7E22AF49DF50003413D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		475F76AE2AF33EF80093B3EE /* JokeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeTableViewCell.swift; sourceTree = "<group>"; };
+		47B85ACF2AF7FF6C00347521 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		47DCDC6F2AF769B0003D3917 /* Joke+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Joke+CoreDataClass.swift"; sourceTree = "<group>"; };
 		47E838DE2AF0D63C00673F59 /* Joke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E838E12AF0D63C00673F59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		47B85AD12AF7FF7500347521 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				47B85ACF2AF7FF6C00347521 /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		47E838D52AF0D63C00673F59 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 			children = (
 				47E838E12AF0D63C00673F59 /* AppDelegate.swift */,
 				47163A262AF56BCC0075DCBC /* Module */,
+				47B85AD12AF7FF7500347521 /* Reachability */,
 				4734F7E12AF49DDE0003413D /* CoreData */,
 				4734F7DE2AF48F730003413D /* Constant */,
 				4734F7DB2AF412C20003413D /* Extensions */,
@@ -256,6 +267,7 @@
 				47E838EC2AF0D63C00673F59 /* MVP_Medium.xcdatamodeld in Sources */,
 				47163A392AF5FF090075DCBC /* JokeListModel.swift in Sources */,
 				470C98F02AF16B4400D476C9 /* JokesListPresenter.swift in Sources */,
+				47B85AD02AF7FF6C00347521 /* Reachability.swift in Sources */,
 				470C98FE2AF1E75F00D476C9 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
